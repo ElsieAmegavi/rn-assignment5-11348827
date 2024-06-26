@@ -1,10 +1,9 @@
 import { StyleSheet, View } from 'react-native';
-import {  HomeHeader } from '../components/HomeHeader';
-
-export const HomeScreen = () => {
+import { HomeHeader } from '../components/HomeHeader';
+const HomeScreen = ({isDarkTheme}) => {
   return (
     <View style={styles.container}>
-      <HomeHeader/>
+      <HomeHeader isDarkTheme={isDarkTheme}/>
     </View>
   );
 }
@@ -15,3 +14,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
 });
+
+export default HomeScreen;

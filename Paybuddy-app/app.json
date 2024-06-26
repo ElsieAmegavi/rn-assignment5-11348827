@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Payton-app",
-    "slug": "Payton-app",
+    "name": "Paybuddy-app",
+    "slug": "Paybuddy-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
