@@ -5,6 +5,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
 import HomeScreen from './src/pages/Home';
 import SettingsScreen from './src/pages/Settings'; 
+import { MyCardsScreen } from './src/pages/MyCards';
+import { StatisticsScreen } from './src/pages/Statistics';
 
 const Tab = createBottomTabNavigator();
 
@@ -54,10 +56,10 @@ const App = () => {
           {() => <HomeScreen isDarkTheme={isDarkTheme}/>}
         </Tab.Screen>
         <Tab.Screen name="My Cards">
-          {() => <HomeScreen isDarkTheme={isDarkTheme}/>}
+          {() => <MyCardsScreen isDarkTheme={isDarkTheme}/>}
         </Tab.Screen>
         <Tab.Screen name="Statistics">
-          {() => <HomeScreen isDarkTheme={isDarkTheme}/>}
+          {() => <StatisticsScreen isDarkTheme={isDarkTheme}/>}
         </Tab.Screen>
         <Tab.Screen name="Settings">
           {() => <SettingsScreen isEnabled={isDarkTheme} toggleSwitch={toggleTheme} />}

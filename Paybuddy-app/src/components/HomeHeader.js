@@ -1,13 +1,16 @@
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { Card } from "./Card";
 import { Transaction } from "./Transaction";
+import Icon from 'react-native-vector-icons/Ionicons';
+
 
 export const HomeHeader = ({ isDarkTheme }) => {
   const headerBackground = isDarkTheme ? '#161622' : '#fff';
   const titleColor = isDarkTheme ? '#ccc' : 'grey';
   const subtitleColor = isDarkTheme ? '#fff' : '#000';
-  const searchBackgroundColor = isDarkTheme ? '#1e1e2d' : '#ecedea';
+  const iconBackgroundColor = isDarkTheme ? '#1e1e2d' : '#ecedea';
+  const iconColor = isDarkTheme ? 'white' : 'black';
 
   return (
     <View style={[styles.container, { backgroundColor: headerBackground }]}>
@@ -24,10 +27,12 @@ export const HomeHeader = ({ isDarkTheme }) => {
           </View>
         </View>
 
-        <View style={[styles.search, { backgroundColor: searchBackgroundColor }]}>
-          <Image
-            source={require('../../assets/search.png')}
-          />
+        <View >
+            <TouchableOpacity>
+              <View style={[styles.icon, { backgroundColor: iconBackgroundColor }]}>
+                <Icon name="search" size={20} color={iconColor} />
+              </View>
+            </TouchableOpacity>
         </View>
       </View>
 
@@ -72,7 +77,7 @@ const styles = StyleSheet.create({
     width: 70,
     marginRight: 20,
   },
-  search: {
+  icon: {
     height: 60,
     width: 60,
     borderRadius: 30,

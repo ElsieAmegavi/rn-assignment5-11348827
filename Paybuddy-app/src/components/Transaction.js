@@ -6,12 +6,12 @@ export const Transaction = ({ isDarkTheme }) => {
     const textColor = isDarkTheme ? 'white' : '#000';
     const cardBackgroundColor = isDarkTheme ? '#161622' : '#fff';
     const imageBackgroundColor = isDarkTheme ? '#1e1e2d' : '#fff';
-
+    
     const transactionsData = [
-        {id: '1', title: 'Apple Store', category: 'Entertainment', amount:'-$5,99', image: require('../../assets/apple.png')},
+        {id: '1', title: 'Apple Store', category: 'Entertainment', amount:'-$5,99', image: isDarkTheme? require('../../assets/white-apple.png'): require('../../assets/apple.png') },
         {id: '2', title: 'Spotify', category: 'Music', amount:'-$12,99', image: require('../../assets/spotify.png')},
-        {id: '3', title: 'Money Transfer', category: 'Transaction', amount:'$300', image: require('../../assets/moneyTransfer.png')},
-        {id: '4', title: 'Apple Store', category: 'Music', amount:'-$88', image: require('../../assets/grocery.png')},
+        {id: '3', title: 'Money Transfer', category: 'Transaction', amount:'$300', image: isDarkTheme? require('../../assets/white-moneyTransfer.png'): require('../../assets/moneyTransfer.png')},
+        {id: '4', title: 'Grocery', category: 'Music', amount:'-$88', image: require('../../assets/grocery.png')},
 
 
     ];
@@ -23,7 +23,7 @@ export const Transaction = ({ isDarkTheme }) => {
             <Text style={styles.seeAll}>Sell All</Text>
         </View>
 
-        <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent}>
+        <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollviewContent}>
             {transactionsData.map((transactions, index) => (
                 <View key={index} style={[styles.transactionView, { backgroundColor: cardBackgroundColor,  borderColor: '#161622', }]}>
 
@@ -31,10 +31,11 @@ export const Transaction = ({ isDarkTheme }) => {
 
                         <View style={styles.transactionImageAndTitle}>
                             <View style={[styles.transactionImageBackground, { backgroundColor: imageBackgroundColor }]}>
-                                <Image 
+                               <Image 
                                 style={styles.transactionImage}
                                 source={transactions.image}
-                            />
+                                />
+
                             </View>
 
                             <View style={styles.transactionTitleSection}>
@@ -77,7 +78,6 @@ const styles = StyleSheet.create({
     scrollView: {
         paddingTop: 10,
         width: '100%',
-        // paddingLeft: 20,
     },
     scrollViewContent: {
         flexGrow: 1,
@@ -90,10 +90,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     transactionView: {
-        // padding: 10,
         height: 80,
-        // borderWidth: 1,
-        // borderRadius: 15,
         marginBottom: 10,
         fontSize: 20,
         fontWeight: 'bold',
@@ -110,10 +107,13 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         marginRight:10,
     },
-    transactionImage: {
-        width: 30,
-        height: 30,    
-    },
+    icon: {
+    height: 60,
+    width: 60,
+    borderRadius: 30,
+    alignItems: "center",
+    justifyContent: "center",
+  },
     transactionTitleSection: {
         paddingTop: 10,
         paddingRight: 50,

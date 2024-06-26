@@ -1,5 +1,6 @@
 import { StyleSheet, View } from 'react-native';
 import { HomeHeader } from '../components/HomeHeader';
+
 const HomeScreen = ({isDarkTheme}) => {
   return (
     <View style={styles.container}>
